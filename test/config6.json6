@@ -1,0 +1,46 @@
+/**
+ * The tests doesn't have to cover all possible cases,
+ * as this is done in `json6`.
+ *
+ * We just need to make sure our module behaves as expected...
+ */
+{
+  name: /*a very important option*/ "json6",
+
+  to: Infinity, // and beyond!
+
+  "one-line": "comment 1", // this is a one line comment
+  "multi-line": "comment 2", /* here we go...
+    a comment in more then one
+    line
+  */
+
+  // rainbows
+  unicorn: /* ❤ */ "cake",
+
+  array: [1,2,3,],
+
+  while: true,
+  nothing : undefined, // why not?
+
+  this: 'is a \
+multi-line string',
+
+  thisAlso: 'is a
+multi-line string; but keeps newline',
+
+//   hex: 0xDEAD_beef,
+  binary: 0b0110_1001,
+  decimal: 123_456_789,
+  octal: 0123,
+  half: .5,
+  delta: +10,
+  negative : ---123,
+
+  finally: 'a trailing comma',
+  oh: [
+      "we shouldn't forget",
+      'arrays can have',
+      'trailing commas too',
+  ],
+}

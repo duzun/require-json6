@@ -1,0 +1,31 @@
+language: node_js
+node_js:
+- stable
+- '12.0'
+- '11.0'
+- '10.0'
+- '9.0'
+- '8.0'
+- '7.0'
+- '6.0'
+- '5.0'
+- '4.0'
+matrix:
+  fast_finish: true
+  allow_failures:
+  - node_js: '7.0'
+  - node_js: '6.0'
+  - node_js: '5.0'
+  - node_js: '4.0'
+sudo: false
+cache:
+  directories:
+  - node_modules
+deploy:
+  provider: npm
+  email: contact@duzun.me
+  api_key:
+    secure: VQ7hCoNdrOZrfGettMhbOnz8TDK7r2yYSw7yB9zu4eTqX2o9GV2r4xkVdCrf8B7/PgU9xMFhQBjAQgnYRf+CT0X0kutzyl2xKuA7LGwt8IP3SQit8Zs6MhVsWKJL03m7g6PP7J12wc8j2zoj/V5bSe+CVfGQCwI18DjxMlsPZu0MyTloWFjB8XbqynF8UUwNLDrtDMXQe939I1OFOYIqOmGPfIlzCWwM0IOqfb7a3BT8DnE8iYG/gEBhLMg7tBy8zAYZQKTRYX3h/BYtddSeo6IvB8haLBD/sMhMeVUI2RH5lNK0zNHMaip/hcaqR5qjExEMuxecycwaE0jOThq6WHWciN/23OsUocoxd3r3Cdmawnxh3LubfDcCsQElsso5SYSgOMvo/QsWLpsq0b8RR2Stz0v+YPOron5F1v59Y+0k55sUxFii/XmzeZgY/9oiZlLeRIMyb+gmUKbk6aBj2G710uWJlp8vNzwMYWhm+b1AJXcz4hWeg81cqTFM9NA4CxSVuQpxQuDxzyXYJ9JyEgiuzHNU7EyFv4RaLIgLqH9MwCw8cDasd5Xg1+dIYbX3mrqVlzBVjiQwTJDE8enb/IHXexBnmnPHTcp+q7NUvgBXAh1Y9aSbxqw35+XvkWZuttzw7qN4Ry+KYL6Rcpwf+FpQ/A9Aobf2DgPnNo3ZNdU=
+  on:
+    tags: true
+    repo: duzun/require-json6

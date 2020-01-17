@@ -1,6 +1,6 @@
 {
   "name": "require-json6",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Require JSON6 files in node - a better JSON for ES6 era",
   "main": "index.js",
   "scripts": {
@@ -30,7 +30,7 @@
     "es5",
     "require"
   ],
-  "author": "Dumitru Uzun <contanct@duzun.me> (https://DUzun.Me)",
+  "author": "Dumitru Uzun <contact@duzun.me> (https://DUzun.Me)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/duzun/require-json6/issues"

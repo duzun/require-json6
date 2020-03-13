@@ -23,20 +23,21 @@ asert.equal(config.name, 'json6', 'yes');
 asert.equal(config.unicorn, 'cake');
 asert.equal(config.array.join('|'), [1,2,3,].join('|'));
 
+// 3.
+var config = requireJSON(__dirname + '/.configrc'); // no extension file
+asert.equal(config.noext, true);
+
+
 requireJSON.replace();
 
-// 3.
+// 4.
 var config = require("./config"); // .json file
 asert.equal(config.name, 'json', 'yes');
 asert.equal(config.unicorn, 'cake');
 asert.equal(config.array.join('|'), [1,2,3,].join('|'));
 
-// 4.
+// 5.
 var configStr = fs.readFileSync(__dirname + "/config6.json6", 'utf8');
 var config = requireJSON.parse(configStr);
 asert.equal(config['one-line'], 'comment 1');
 asert.equal(config['multi-line'], 'comment 2');
-
-
-
-console.log(config);

@@ -2,11 +2,13 @@
  * Require .json files with comments
  *
  * @license MIT
- * @version 1.0.1
+ * @version 1.1.0
  * @author Dumitru Uzun (DUzun.Me)
  */
 
-const VERSION = '1.0.1';
+/*jshint esversion: 9, node:true*/
+
+const VERSION = '1.1.0';
 
 const fs = require('fs');
 const path = require('path');
@@ -15,7 +17,16 @@ const JSON6 = require('json-6');
 
 /// Require a JSON file with comments
 function requireJSON6(filename) {
-    if ( path.extname(filename) == '' ) filename += fs.existsSync(filename + '.json6') ? '.json6' : '.json';
+    if ( path.extname(filename) == '' ) {
+        const extensions = ['.json6', '.json'];
+        for(let i=0, l = extensions.length, ext; i<l; ++i) {
+            ext = extensions[i];
+            if(fs.existsSync(filename + ext)) {
+                filename += ext;
+                break;
+            }
+        }
+    }
     try {
         return JSON6.parse(stripBOM(fs.readFileSync(filename, 'utf8')));
     }

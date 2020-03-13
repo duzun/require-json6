@@ -2,6 +2,7 @@ language: node_js
 
 node_js:
     - stable
+    - '13.0'
     - '12.0'
     - '11.0'
     - '10.0'
@@ -15,6 +16,8 @@ node_js:
 matrix:
     fast_finish: true
     allow_failures:
+        - node_js: '9.0'
+        - node_js: '8.0'
         - node_js: '7.0'
         - node_js: '6.0'
         - node_js: '5.0'

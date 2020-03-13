@@ -1,4 +1,6 @@
 language: node_js
+os: linux
+dist: trusty
 
 node_js:
     - stable
@@ -13,7 +15,7 @@ node_js:
     - '5.0'
     - '4.0'
 
-matrix:
+jobs:
     fast_finish: true
     allow_failures:
         - node_js: '9.0'
@@ -23,11 +25,10 @@ matrix:
         - node_js: '5.0'
         - node_js: '4.0'
 
-sudo: false
-
 cache:
     directories:
         - node_modules
+    timeout: 1440
 
 deploy:
     provider: npm

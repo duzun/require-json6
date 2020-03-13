@@ -19,7 +19,7 @@ const JSON6 = require('json-6');
 function requireJSON6(filename) {
     if ( path.extname(filename) == '' ) {
         const extensions = ['.json6', '.json'];
-        for(let i=0, l = extensions.length, ext; i<l; ++i) {
+        for(var i=0, l = extensions.length, ext; i<l; ++i) {
             ext = extensions[i];
             if(fs.existsSync(filename + ext)) {
                 filename += ext;
